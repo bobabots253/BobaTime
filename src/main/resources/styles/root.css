@@ -3,8 +3,8 @@ Main Screen CSS
  */
 
 #main {
-    -fx-font-family: "Calibri";
-    -fx-background-color: #D0BB61;
+    -fx-font-family: "Open Sans";
+    -fx-background-color: #3EB1C8;
 }
 
 .button {
@@ -73,7 +73,7 @@ Main Screen CSS
     -fx-max-width: 250px;
     -fx-padding: 15px;
     -fx-border-radius: 3px;
-    -fx-background-color: #d9c575;
+    -fx-background-color: #88dbdf;
 }
 
 #hyperlinkBottom {
