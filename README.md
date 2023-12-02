@@ -1,14 +1,14 @@
-# BobaTime >> Forked from Grizzlytime
+# GrizzlyTime
 
-[![Codacy Badge](https://api.codacy.com/project/badge/Grade/63d04fb23e1d411a946c3184a57ef691)](https://www.codacy.com/app/gamefollower26/GrizzlyTime?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=YCSRobotics/GrizzlyTime&amp;utm_campaign=Badge_Grade)
-![Current Version Bade](https://img.shields.io/github/release/ycsrobotics/GrizzlyTime.svg?style=flat)
+![Codacy Badge](https://app.codacy.com/project/badge/Grade/526a7badc871467ba68c0d688e87b3c7)
+![Current Version Badge](https://img.shields.io/github/release/ycsrobotics/GrizzlyTime.svg?style=flat)
 ![Num Downloads](https://img.shields.io/github/downloads/ycsrobotics/GrizzlyTime/latest/total.svg?style=flat)
 ![License](https://img.shields.io/github/license/ycsrobotics/GrizzlyTime.svg?style=flat)
 ![Appveyor](https://ci.appveyor.com/api/projects/status/ph074gnnuymhxssw?svg=true)
-        
 
+![example image](https://raw.githubusercontent.com/YCSRobotics/GrizzlyTime/master/wiki_images/main_screen.png)
 
-BobaTime >> Forked from Grizzlytime is a Java based time logging system that links with Google Sheets. It features fast setup (<5minutes), logging of individual student dates, quick student registration, flexible 6 digit ID system, etc.
+GrizzlyTime is a Java based time logging system that links with Google Sheets. It features fast setup (<5minutes), logging of individual student dates, quick student registration, flexible 6 digit ID system, etc.
 
 ## Notice
 Google Sheets has a maximum column limit of 256 columns. The Date Log WILL break once this limit has been reached!
@@ -27,14 +27,14 @@ I'm currently working on a workaround or an alternative means of storing this da
 - Gather statistics of student growth over time
 
 ## Downloads
-Currently supported OSes: Windows  
-Unsupported OSes: Linux, Mac  
-Note: I would love to support Linux and Mac. Unfortunately, I do not own a Mac machine to test GrizzlyTime on. It may
-or may not work. I'm currently working on getting Linux up and running. See [this issue](https://github.com/Daltz333/GrizzlyTime-JavaFX/issues/25)
+Currently supported OSes: Windows, Linux
+Unsupported OSes: Mac
+Note: I would love to support Mac. Unfortunately, I do not own a Mac machine to test GrizzlyTime on. It may
+or may not work.
 
 Download the latest **release** [here](https://github.com/YCSRobotics/GrizzlyTime/releases/latest "here").
 
-A setup tutorial can be found [here.](https://www.youtube.com/watch?v=GhDeMjEh9ao "here.")  
+A setup tutorial can be found [here.](https://www.youtube.com/watch?v=GhDeMjEh9ao "here.")
 Or see the [wiki](https://github.com/YCSRobotics/GrizzlyTime/wiki "wiki")
 
 ## Customizing/Building Source Code
@@ -47,5 +47,5 @@ Google Java API Client 1.23.0
 Commons-IO 2.6
 Org.Json
 ```
-Original Repository: https://github.com/YCSRobotics/GrizzlyTime
+
 GrizzlyTime is programmed and maintained by a member of FRC Team 66, Grizzly Robotics, Dalton Smith. All rights are reserved. Grizzly Robotics logo rights reserved.
