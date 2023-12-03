@@ -1,4 +1,4 @@
-# GrizzlyTime
+# BobaTime >> Forked from Grizzlytime
 
 ![Codacy Badge](https://app.codacy.com/project/badge/Grade/526a7badc871467ba68c0d688e87b3c7)
 ![Current Version Badge](https://img.shields.io/github/release/ycsrobotics/GrizzlyTime.svg?style=flat)
@@ -8,7 +8,7 @@
 
 ![example image](https://raw.githubusercontent.com/YCSRobotics/GrizzlyTime/master/wiki_images/main_screen.png)
 
-GrizzlyTime is a Java based time logging system that links with Google Sheets. It features fast setup (<5minutes), logging of individual student dates, quick student registration, flexible 6 digit ID system, etc.
+BobaTime >> Forked from Grizzlytime is a Java based time logging system that links with Google Sheets. It features fast setup (<5minutes), logging of individual student dates, quick student registration, flexible 6 digit ID system, etc.
 
 ## Notice
 Google Sheets has a maximum column limit of 256 columns. The Date Log WILL break once this limit has been reached!
@@ -43,6 +43,7 @@ Visit the [wiki](https://github.com/YCSRobotics/GrizzlyTime/wiki "wiki") for inf
 ## Credits
 GrizzlyTime is licensed under MIT and uses the following open source software with their respective licenses.
 ```
+Original Repository: https://github.com/YCSRobotics/GrizzlyTime
 Google Java API Client 1.23.0
 Commons-IO 2.6
 Org.Json

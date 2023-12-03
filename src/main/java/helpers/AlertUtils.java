@@ -243,7 +243,7 @@ public class AlertUtils {
     // GridPane.setHgrow(firstName, Priority.ALWAYS);
     TextField lastName = new TextField("");
 
-    TextField email = new TextField("");
+    TextField team = new TextField("");
 
     firstName.setId("textField");
     lastName.setId("textField");
@@ -251,9 +251,9 @@ public class AlertUtils {
     firstName.setPromptText("");
     lastName.setPromptText("");
 
-    email.setPromptText("");
+    team.setPromptText("");
 
-    email.setId("textField");
+    team.setId("textField");
 
     ToggleGroup studentRadioGroup = new ToggleGroup();
 
@@ -287,8 +287,8 @@ public class AlertUtils {
     grid.add(firstName, 1, 0);
     grid.add(new Label("Last Name:"), 0, 1);
     grid.add(lastName, 1, 1);
-    grid.add(new Label("Email:"), 0, 2);
-    grid.add(email, 1, 2);
+    grid.add(new Label("Team #:"), 0, 2);
+    grid.add(team, 1, 2);
 
     GridPane.setColumnSpan(genderPane, 2);
     grid.add(genderPane, 0, 3);
@@ -305,21 +305,7 @@ public class AlertUtils {
 
     Node button = dialog.getDialogPane().lookupButton(loginButtonType);
 
-    button.setDisable(true);
-
-    email
-        .textProperty()
-        .addListener(
-            (observable, oldValue, newValue) -> {
-              Pattern regex =
-                  Pattern.compile(
-                      "^[A-Z0-9._%+-]+@[A-Z0-9.-]+\\.[A-Z]{2,6}$", Pattern.CASE_INSENSITIVE);
-              Matcher matcher = regex.matcher(newValue);
-
-              if (matcher.matches()) {
-                button.setDisable(false);
-              }
-            });
+    button.setDisable(false);
 
     // Request focus on the firstname field by default.
     Platform.runLater(firstName::requestFocus);
@@ -334,7 +320,7 @@ public class AlertUtils {
       data.add("TRUE");
       data.add(firstName.getText());
       data.add(lastName.getText());
-      data.add(email.getText());
+      data.add(team.getText());
 
       if (maleRadio.isSelected()) {
         data.add("MALE");

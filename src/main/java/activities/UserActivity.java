@@ -133,8 +133,11 @@ public class UserActivity {
   }
 
   // login our user
-  public void loginUser(String userID) {
-    Platform.runLater(() -> GrizzlyScene.setMessageBoxText("Logging in user: " + userID));
+  public void loginUser(String userID) throws InterruptedException {
+    
+    String userIDClear = userID;
+
+    Platform.runLater(() -> GrizzlyScene.setMessageBoxText("Logging user: " + userID));
 
     // grab the current time from system and format it into string
     LocalDateTime loginTime = LocalDateTime.now();
@@ -149,28 +152,28 @@ public class UserActivity {
 
       Platform.runLater(
           () -> {
-            GrizzlyScene.setMessageBoxText("Successfully logged in user: " + userID);
-            GrizzlyScene.clearInput();
+            GrizzlyScene.setMessageBoxText("Storing user: " + userID);
           });
     }
+  
   }
 
   // logout the user
   public void logoutUser(String userID) {
-    Platform.runLater(() -> GrizzlyScene.setMessageBoxText("Logging out user: " + userID));
+    Platform.runLater(() -> GrizzlyScene.setMessageBoxText("Entering user: " + userID));
 
     // grab the row the user is on
     int userRow =
         dbUtils.getCellRowFromColumn(userID, Constants.kStudentIdColumn, Constants.kMainSheet);
 
-    // grab last logged in time
-    LocalDateTime logoutTime = LocalDateTime.now();
-    LocalDateTime loginTime =
-        LocalDateTime.parse(
-            dbUtils.getCellData(userRow, Constants.kLastLoginColumn, Constants.kMainSheet),
-            formatter);
+    // // grab last logged in time
+     LocalDateTime logoutTime = LocalDateTime.now();
+    // LocalDateTime loginTime =
+    //     LocalDateTime.parse(
+    //         dbUtils.getCellData(userRow, Constants.kLastLoginColumn, Constants.kMainSheet),
+    //         formatter);
 
-    String formattedLogoutTime = logoutTime.format(formatter);
+     String formattedLogoutTime = logoutTime.format(formatter);
 
     // assuming userRow isn't invalid, calculate difference in time and log hours
     if (userRow != -1) {
@@ -178,49 +181,49 @@ public class UserActivity {
       dbUtils.setCellData(
           userRow, Constants.kLastLogoutColumn, formattedLogoutTime, Constants.kMainSheet);
 
-      int diffHours = logoutTime.getHour() - loginTime.getHour();
-      int diffMinutes = logoutTime.getMinute() - loginTime.getMinute();
-      int diffSeconds = logoutTime.getSecond() - loginTime.getSecond();
+    //   int diffHours = logoutTime.getHour() - loginTime.getHour();
+    //   int diffMinutes = logoutTime.getMinute() - loginTime.getMinute();
+    //   int diffSeconds = logoutTime.getSecond() - loginTime.getSecond();
 
-      boolean err = false;
+       boolean err = false;
 
-      if (diffHours < 0) {
-        LoggingUtils.log(
-            Level.SEVERE,
-            "Well this is awkward, difference shouldn't be negative: h:"
-                + diffHours
-                + " m:"
-                + diffMinutes
-                + " s:"
-                + diffSeconds);
-        err = true;
-      }
+    //   if (diffHours < 0) {
+    //     LoggingUtils.log(
+    //         Level.SEVERE,
+    //         "Well this is awkward, difference shouldn't be negative: h:"
+    //             + diffHours
+    //             + " m:"
+    //             + diffMinutes
+    //             + " s:"
+    //             + diffSeconds);
+    //     err = true;
+    //   }
 
-      if (diffSeconds < 0) {
-        diffMinutes -= 1;
-        diffSeconds = 60 - Math.abs(diffSeconds);
-      }
+    //   if (diffSeconds < 0) {
+    //     diffMinutes -= 1;
+    //     diffSeconds = 60 - Math.abs(diffSeconds);
+    //   }
 
-      if (diffMinutes < 0) {
-        diffHours -= 1;
-        diffMinutes = 60 - Math.abs(diffMinutes);
-      }
+    //   if (diffMinutes < 0) {
+    //     diffHours -= 1;
+    //     diffMinutes = 60 - Math.abs(diffMinutes);
+    //   }
 
-      if (loginTime.getYear() == logoutTime.getYear()) {
-        if (loginTime.getMonth() == logoutTime.getMonth()) {
-          if (loginTime.getDayOfMonth() != logoutTime.getDayOfMonth()) {
-            err = true;
-          }
-        } else {
-          err = true;
-        }
-      } else {
-        err = true;
-      }
+    //   if (loginTime.getYear() == logoutTime.getYear()) {
+    //     if (loginTime.getMonth() == logoutTime.getMonth()) {
+    //       if (loginTime.getDayOfMonth() != logoutTime.getDayOfMonth()) {
+    //         err = true;
+    //       }
+    //     } else {
+    //       err = true;
+    //     }
+    //   } else {
+    //     err = true;
+    //   }
 
       if (!err) {
         String totalTimeFromDifference =
-            String.format("%02d:%02d:%02d", diffHours, diffMinutes, diffSeconds);
+            String.format("%02d:%02d:%02d", 0, 0, 1);
         LocalTime totalHoursTime = LocalTime.parse(totalTimeFromDifference);
 
         logoutActivity.logoutUserWithHours(
@@ -238,7 +241,7 @@ public class UserActivity {
             });
       }
     }
-  }
+  } 
 
   // checks if ID is valid long and x digit number (x based on config file)
   public boolean isValidID(String userID) {

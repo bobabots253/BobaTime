@@ -227,6 +227,9 @@ public class GrizzlyScene {
             if (!(userActivity.isUserLoggedIn(studentIDBox.getText()))) {
               LoggingUtils.log(Level.INFO, "Logging in: " + studentIDBox.getText());
               userActivity.loginUser(studentIDBox.getText());
+              
+              Thread.sleep(1000);           
+              userActivity.logoutUser(studentIDBox.getText());
 
             } else {
               LoggingUtils.log(Level.INFO, "Logging out: " + studentIDBox.getText());

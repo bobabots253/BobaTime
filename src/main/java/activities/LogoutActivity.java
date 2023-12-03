@@ -36,7 +36,7 @@ public class LogoutActivity {
       prevTotalTimeNum[2] = Double.parseDouble(prevTotalTime[2]);
 
     } catch (DateTimeParseException | NumberFormatException | ArrayIndexOutOfBoundsException e) {
-      LoggingUtils.log(Level.WARNING, "Error parsing previous total time, using fallback of 0.0");
+      LoggingUtils.log(Level.WARNING, "Error parsing previous total time, using fallback of 0.0. Error is valid for setup.");
       prevTotalTimeNum[0] = 0.0;
       prevTotalTimeNum[1] = 0.0;
       prevTotalTimeNum[2] = 0.0;
@@ -79,7 +79,7 @@ public class LogoutActivity {
       prevDayTime = LocalTime.parse("00:00:01");
       LoggingUtils.log(
           Level.WARNING,
-          "There was an issue adding cell data, using fallback. \n" + e.getMessage());
+          "There was an issue adding cell data, using fallback. Error is valid for setup. \n" + e.getMessage());
     }
 
     LocalTime tempTotalDayTime;
@@ -107,7 +107,7 @@ public class LogoutActivity {
     // show user logout text
     Platform.runLater(
         () -> {
-          GrizzlyScene.setMessageBoxText("Logged out user: " + userID);
+          GrizzlyScene.setMessageBoxText("Logged user: " + userID);
           GrizzlyScene.clearInput();
         });
   }
