@@ -2,9 +2,9 @@
 Main Screen CSS
  */
 
-#main {
-    -fx-font-family: "Calibri";
-    -fx-background-color: #D0BB61;
+ #main {
+    -fx-font-family: "Open Sans";
+    -fx-background-color: #9edede;
 }
 
 .button {
@@ -54,7 +54,7 @@ Main Screen CSS
 }
 
 #confirmButton:hover {
-    -fx-background-color: #acacac;
+    -fx-background-color: #9edede;
 }
 
 #bottomPane {
@@ -73,7 +73,7 @@ Main Screen CSS
     -fx-max-width: 250px;
     -fx-padding: 15px;
     -fx-border-radius: 3px;
-    -fx-background-color: #d9c575;
+    -fx-background-color: #9edede;
 }
 
 #hyperlinkBottom {
@@ -96,7 +96,7 @@ Main Screen CSS
 }
 
 #navMenu {
-    -fx-background-color: #d9c575;
+    -fx-background-color: #9edede;
     -fx-padding: 5px;
 }
 
@@ -116,8 +116,8 @@ Credits CSS
 }
 
 #creditsRoot {
-    -fx-font-family: "Calibri";
-    -fx-background-color: #D0BB61;
+    -fx-font-family: "Open Sans";
+    -fx-background-color: #9edede;
 }
 
 #summaryText {
@@ -140,16 +140,16 @@ Custom Dialog CSS
 */
 
 #customDialog {
-    -fx-background-color: #D0BB61;
+    -fx-background-color: #9edede;
     -fx-padding: 10px;
     -fx-font-size: 16px;
 }
 
 .myDialog{
-    -fx-background-color: #D0BB61;
+    -fx-background-color: #9edede;
 }
 .myDialog > *.button-bar > *.container{
-    -fx-background-color: #D0BB61;
+    -fx-background-color: #9edede;
 }
 
 .myDialog > *.label.content{
@@ -157,7 +157,7 @@ Custom Dialog CSS
     -fx-font-weight: bold;
 }
 .myDialog:header *.header-panel{
-    -fx-background-color: #d9c575;
+    -fx-background-color: #9edede;
 }
 .myDialog:header *.header-panel *.label{
     -fx-font-size: 25px;
@@ -169,10 +169,10 @@ Account Dialog CSS
  */
 
 .accountDialog{
-    -fx-background-color: #D0BB61;
+    -fx-background-color: #9edede;
 }
 .accountDialog > *.button-bar > *.container{
-    -fx-background-color: #D0BB61;
+    -fx-background-color: #9edede;
 }
 
 .accountDialog > *.label.content{
@@ -180,7 +180,7 @@ Account Dialog CSS
     -fx-font-weight: bold;
 }
 .accountDialog:header *.header-panel{
-    -fx-background-color: #d9c575;
+    -fx-background-color: #9edede;
 }
 .accountDialog:header *.header-panel *.label{
     -fx-font-size: 23px;
